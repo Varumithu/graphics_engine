@@ -69,6 +69,22 @@ public:
                        static_cast<double>(m_inner_angle), static_cast<double>(m_outer_angle));
 	}
 
+    float GetInnerAngle() {
+        return m_inner_angle;
+    }
+
+    void SetInnerAngle(float a){
+        m_inner_angle = a;
+    }
+
+    void SetOuterAngle(float a) {
+        m_outer_angle = a;
+    }
+
+    float GetOuterAngle() {
+        return m_outer_angle;
+    }
+
 	virtual Vector4 GetColor() const
 	{
 		return Vector4(m_color, m_intensity);
@@ -118,13 +134,7 @@ public:
 		m_shadowMode = mode;
 	}
 
-    void SetOuterAngle(float a) {
-        m_outer_angle = a;
-    }
 
-    float GetOuterAngle() {
-        return m_outer_angle;
-    }
 
 	/**
 	* @brief Get shadow mode (none, hard, soft)
@@ -197,13 +207,6 @@ public:
         return m_attenuation_coeff;
     }
 
-    float GetInnerAngle() {
-        return m_inner_angle;
-    }
-
-    void SetInnerAngle(float a){
-        m_inner_angle = a;
-    }
 
 	/**
 	* @brief Get shadow map.
@@ -241,7 +244,7 @@ protected:
 
     float           m_inner_angle = 0.3f;
 
-    float           m_outer_angle = 1.5f;
+    float           m_outer_angle = 0.7f;
 
 	/**
 	* @brief Shadows mode (none, hard, soft).
